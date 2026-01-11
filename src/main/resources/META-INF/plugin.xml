@@ -1,0 +1,38 @@
+<idea-plugin>
+    <id>com.solidity.intellij</id>
+    <name>Solidity IntelliJ</name>
+    <version>1.1</version>
+    <vendor>Juan Risen</vendor>
+    <icon>icons/icon.png</icon>
+    <idea-version since-build="*.*" />
+
+    <description><![CDATA[
+        <h2>Solidity IntelliJ</h2>
+        <p>A light, stable, and feature-rich Solidity language support plugin for JetBrains IDEs.</p>
+        
+        <h3>Features</h3>
+        <ul>
+            <li>Recognizes <code>.sol</code> files as Solidity source files in your JetBrains IDE.</li>
+            <li><strong>Syntax highlighting</strong> for Solidity keywords, types, comments, strings, and numbers.</li>
+            <li><strong>Solidity file icon</strong> for <code>.sol</code> files.</li>
+            <li><strong>Code completion</strong> for Solidity keywords, types, and smart contract constructs.</li>
+            <li><strong>Structure view</strong> for easy navigation of contracts, functions, and variables.</li>
+            <li><strong>Code folding</strong> for contracts, functions, and code blocks.</li>
+            <li><strong>Error checking and linting</strong> with real-time feedback as you type.</li>
+            <li><strong>Run/Compile Solidity</strong> contracts directly from the IDE with integrated output.</li>
+            <li><strong>Deploy contracts</strong> to Ethereum-compatible networks from within the IDE.</li>
+            <li><strong>Go to definition, find usages, and code navigation</strong> for Solidity symbols.</li>
+            <li><strong>Quick documentation and parameter info</strong> for Solidity elements.</li>
+        </ul>
+        
+        <h3>Usage</h3>
+        <p>Open or create any file with the <code>.sol</code> extension. The IDE will recognize it as a Solidity file and provide all advanced language features automatically.</p>
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <postStartupActivity implementation="com.solidity.jetbrains.SolidityProjectService"/>
+        <notificationGroup id="Solidity Debug" displayType="BALLOON" key="solidity.debug.group"/>
+    </extensions>
+</idea-plugin> 
